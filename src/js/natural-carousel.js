@@ -16,9 +16,6 @@
 
                 for (var j = 0; j < gallery.slidesData.length; j++) {
                     var data = gallery.slidesData[j];
-                    //var slide = $('<div class="swiper-slide swiper-lazy"></div>')
-                    //    .attr('data-background', data.enlarged)
-                    //    .append('<div class="swiper-lazy-preloader"></div>');
 
                     var slide = $('<div class="swiper-slide"></div>')
                         .css('background-image', 'url(' + data.enlarged + ')');
