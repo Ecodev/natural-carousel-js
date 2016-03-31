@@ -19,41 +19,37 @@
 			var images = [];
 			var thumbnailMaximumHeight = 300;
 
-			//
-			//			$.ajax({
-			//				dataType: "json",
-			//				async: false,
-			//				url: "https://api.unsplash.com/categories/7/photos",
-			//				data: {
-			//					client_id: '04902b80294822aa86dbe5c57ee47e1c1f0e8a0f0f360979746970a1239001dd',
-			//					per_page: 30
-			//				},
-			//				success: function(data) {
-			//
-			//					for (var i = 0; i < data.length; i++) {
-			//
-			//						var image = data[i];
-			//
-			//						// some times unsplash it send corrupted (?) data
-			//						if (isNaN(ratio)) {
-			//							continue;
-			//						}
-			//
-			//						var formatedImage = {
-			//							id: i,
-			//							thumbnail: image.urls.regular,
-			//							enlarged: image.urls.full,
-			//							title: image.user.name,
-			//							tWidth: thumbnailMaximumHeight * ratio,
-			//							tHeight: thumbnailMaximumHeight,
-			//							eWidth: image.width,
-			//							eHeight: image.height
-			//						};
-			//
-			//						images.push(formatedImage);
-			//					}
-			//				}
-			//			});
+				$.ajax({
+					dataType: "json",
+					async: false,
+					url: "https://api.unsplash.com/categories/7/photos",
+					data: {
+						client_id: 'c46fa8f775eae058f01a95187d3e47b8f723de91eb976bf74b1f5551606b7a62',
+						per_page: 7
+					},
+					success: function(data) {
+
+						for (var i = 0; i < data.length; i++) {
+
+							var image = data[i];
+
+							// some times unsplash it send corrupted (?) data
+							var ratio = image.width / image.height;
+							if (isNaN(ratio)) {
+								continue;
+							}
+
+							var formatedImage = {
+								thumbnail: image.urls.regular,
+								enlarged: image.urls.full,
+								title: image.user.name,
+								desc: image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name
+							};
+
+							images.push(formatedImage);
+						}
+					}
+				});
 
 		</script>
 
@@ -68,6 +64,8 @@
 
 				var naturalCarousel = {};
 				naturalCarousel.id = 0;
+
+				naturalCarousel.slidesData = images;
 
 				// Settings
 				naturalCarousel.autoReplay = true;
@@ -88,17 +86,13 @@
 				window.naturalCarousels.push(naturalCarousel);
 			</script>
 
-			<div class="swiper-container naturalCarousel" id="naturalCarousel-0" data-galleryid="0">
+			<div class="swiper-container natural-carousel" id="natural-carousel-0" data-galleryid="0">
 				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">Slide 1</div>
-					<div class="swiper-slide">Slide 2</div>
-					<div class="swiper-slide">Slide 3</div>
-				</div>
+				<div class="swiper-wrapper"></div>
 				<div class="swiper-pagination" id="swiper-pagination-0"></div>
 				<div class="swiper-button-prev" id="swiper-button-prev-0"></div>
 				<div class="swiper-button-next" id="swiper-button-next-0"></div>
-				<div class="swiper-scrollbar" id="swiper-scrollbar-0" ></div>
+				<!--<div class="swiper-scrollbar" id="swiper-scrollbar-0" ></div>-->
 			</div>
 
 

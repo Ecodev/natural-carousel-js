@@ -10,23 +10,48 @@
 
                 var gallery = naturalCarousels[i];
 
-                gallery.selector = '#naturalCarousel-' + i;
+                gallery.selector = '#natural-carousel-' + i;
                 gallery.rootElement = $(gallery.selector);
                 gallery.bodyElement = gallery.rootElement.find('.swiper-wrapper');
 
-                //for (var j = 0; j < gallery.images.length; j++) {
-                //    var slide = $('<div class="swiper-slide swiper-lazy"></div>')
-                //        .attr('data-background', gallery.images[j].enlarged)
-                //        .append('<div class="swiper-lazy-preloader"></div>');
-                //
-                //    gallery.bodyElement.append(slide);
-                //}
+                for (var j = 0; j < gallery.slidesData.length; j++) {
+                    var data = gallery.slidesData[j];
+                    var slide = $('<div class="swiper-slide swiper-lazy"></div>')
+                        .attr('data-background', data.enlarged)
+                        .append('<div class="swiper-lazy-preloader"></div>');
+
+                    gallery.bodyElement.append(slide);
+                }
 
                 gallery.swiper = new Swiper(gallery.rootElement.selector, {
                     pagination: '#swiper-pagination-' + gallery.id,
                     nextButton: '#swiper-button-next-' + gallery.id,
                     prevButton: '#swiper-button-prev-' + gallery.id,
-                    scrollbar: '#swiper-scrollbar-' + gallery.id,
+
+                    paginationBulletRender: function (index, className) {
+
+                        var bgElement = $('<span></span>')
+                            .css('background-image', 'url(' + gallery.slidesData[index].thumbnail +')');
+
+                        var bgContainer = $('<span></span>')
+                            .addClass('swiper-pagination-bullet-bg')
+                            .append(bgElement);
+
+                        var label = $('<span></span>')
+                            .text(gallery.slidesData[index].title)
+                            .addClass('swiper-pagination-bullet-label');
+
+                        var bullet = $('<span></span>')
+                            .addClass(className)
+                            .append(bgContainer)
+                            .append(label);
+
+                        bullet = $('<div></div>').append(bullet).html();
+
+                        return bullet;
+                    },
+
+                    //direction: 'vertical',
 
                     loop: gallery.loop,
                     speed: gallery.transitionTime,
