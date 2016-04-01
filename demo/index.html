@@ -18,38 +18,41 @@
 		<script>
 			var images = [];
 			var thumbnailMaximumHeight = 300;
+			var cats = [2,3,4,6,7,8];
+			var cat = Math.floor(Math.random() * cats.length);
+			cat = cats[cat];
 
-				$.ajax({
-					dataType: "json",
-					async: false,
-					url: "https://api.unsplash.com/categories/7/photos",
-					data: {
-						client_id: 'c46fa8f775eae058f01a95187d3e47b8f723de91eb976bf74b1f5551606b7a62',
-						per_page: 7
-					},
-					success: function(data) {
+			$.ajax({
+				dataType: "json",
+				async: false,
+				url: "https://api.unsplash.com/categories/" + cat + "/photos",
+				data: {
+					client_id: 'c46fa8f775eae058f01a95187d3e47b8f723de91eb976bf74b1f5551606b7a62',
+					per_page: 7
+				},
+				success: function(data) {
 
-						for (var i = 0; i < data.length; i++) {
+					for (var i = 0; i < data.length; i++) {
 
-							var image = data[i];
+						var image = data[i];
 
-							// some times unsplash it send corrupted (?) data
-							var ratio = image.width / image.height;
-							if (isNaN(ratio)) {
-								continue;
-							}
-
-							var formatedImage = {
-								thumbnail: image.urls.thumb,
-								enlarged: image.urls.regular,
-								title: image.user.name,
-								desc: image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name
-							};
-
-							images.push(formatedImage);
+						// some times unsplash it send corrupted (?) data
+						var ratio = image.width / image.height;
+						if (isNaN(ratio)) {
+							continue;
 						}
+
+						var formatedImage = {
+							thumbnail: image.urls.thumb,
+							enlarged: image.urls.regular,
+							title: image.user.name,
+							desc: image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name
+						};
+
+						images.push(formatedImage);
 					}
-				});
+				}
+			});
 
 		</script>
 
@@ -59,6 +62,11 @@
 		<div class="container">
 			<h1>Natural carousel</h1>
 
+			<svg version="1.1" style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 7.41" enable-background="new 0 0 12 7.41"><
+				<g id="natural-carousel-arrow-top">
+					<path d="M1.41,7.41L6,2.83l4.59,4.58L12,6L6,0L0,6L1.41,7.41z"/>
+				</g>
+			</svg>
 			<script type="text/javascript">
 				window.naturalCarousels = window.naturalCarousels || [];
 
@@ -77,11 +85,11 @@
 				naturalCarousel.margin = 0;
 
 				// @todo : to implement
-//				naturalCarousel.slideHeight = Number('{settings.slideHeight}');
-//				naturalCarousel.format = '{settings.format}';
-//				naturalCarousel.autoPlay = Boolean('{settings.autoPlay}');
-//				naturalCarousel.showThumbnails = Boolean('{settings.showThumbnails}');
-//				naturalCarousel.thumbnailHeight = Number('{settings.thumbnailHeight}');
+				//				naturalCarousel.slideHeight = Number('{settings.slideHeight}');
+				//				naturalCarousel.format = '{settings.format}';
+				//				naturalCarousel.autoPlay = Boolean('{settings.autoPlay}');
+				//				naturalCarousel.showThumbnails = Boolean('{settings.showThumbnails}');
+				//				naturalCarousel.thumbnailHeight = Number('{settings.thumbnailHeight}');
 
 				window.naturalCarousels.push(naturalCarousel);
 			</script>
@@ -90,8 +98,16 @@
 				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper"></div>
 				<div class="swiper-pagination" id="swiper-pagination-0"></div>
-				<div class="swiper-button-prev" id="swiper-button-prev-0"></div>
-				<div class="swiper-button-next" id="swiper-button-next-0"></div>
+				<div class="swiper-button-prev" id="swiper-button-prev-0">
+					<svg viewBox="0 0 12 7.41">
+						<use xlink:href="#natural-carousel-arrow-top"></use>
+					</svg>
+				</div>
+				<div class="swiper-button-next" id="swiper-button-next-0">
+					<svg viewBox="0 0 12 7.41">
+						<use xlink:href="#natural-carousel-arrow-top"></use>
+					</svg>
+				</div>
 				<!--<div class="swiper-scrollbar" id="swiper-scrollbar-0" ></div>-->
 			</div>
 

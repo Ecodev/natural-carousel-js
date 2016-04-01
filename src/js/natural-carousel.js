@@ -53,12 +53,14 @@
 
                     //direction: 'vertical',
 
+                    //effect: 'cube',
+                    effect: 'coverflow',
+
                     loop: gallery.loop,
                     speed: gallery.transitionTime,
                     autoplay: gallery.waitTime, // @todo : implement gallery.autoplay setting
                     autoplayDisableOnInteraction: gallery.autoReplay,
                     slidesPerView: gallery.slidesPerView,
-
                     spaceBetween: gallery.margin,
                     paginationClickable: true,
                     keyboardControl: true,

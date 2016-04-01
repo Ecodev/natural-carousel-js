@@ -3,12 +3,18 @@
 * ===================================================
 */
 
+.swiper-cube-shadow {
+    display:none !important;
+}
+$sliderHeight: 500;
+$paginationMargin: 50;
+
 .swiper-container {
-    height: 400px;
+    height: #{$sliderHeight}px;
 }
 
 .swiper-wrapper {
-    height: 350px;
+    height: #{$sliderHeight - $paginationMargin}px;
 }
 
 .natural-carousel {
@@ -28,13 +34,42 @@
 
     &.swiper-container-horizontal {
 
-        .swiper-button-next, .swiper-button-prev {
-            top: default;
-            bottom: 50%;
+        .swiper-button-prev,
+        .swiper-button-next {
+            opacity:0;
+            width:70px;
+            top:0;
+            height: #{$sliderHeight}px;
+            transition: all ease 400ms;
+
+            svg {
+                position:absolute;
+                width:40px;
+                top:50%;
+                left:50%;
+                margin-top:-10px;
+            }
+        }
+
+        .swiper-button-prev {
+            left:-70px;
+            svg {
+                left:13px;
+                transform: rotate(-90deg);
+            }
+        }
+
+        .swiper-button-next {
+            right:-70px;
+            svg {
+                left:20px;
+                transform: rotate(90deg);
+            }
         }
 
         .swiper-pagination-bullets {
             bottom: 0;
+            //min-height : #{$paginationMargin}px;
 
             .swiper-pagination-bullet {
                 position: relative;
@@ -54,7 +89,7 @@
 
                     span {
                         display: block;
-                        position:relative;
+                        position: relative;
                         top: -15px;
                         left: -15px;
                         width: 100px;
@@ -67,17 +102,18 @@
                 .swiper-pagination-bullet-label {
                     position: absolute;
                     display: none;
-                    opacity:0;
-                    left:50%;
-                    bottom: 110px;
-                    width:300px;
-                    margin-left:-150px;
+                    opacity: 0;
+                    left: 50%;
+                    bottom: 90px;
+                    width: 300px;
+                    margin-left: -150px;
                     padding: 10px 20px;
-                    background: rgba(0, 0, 0, 0.8);
                     text-align: center;
                     font-size: 16px;
-                    color: white;
+                    border-radius:999px;
                     transition: opacity ease 400ms;
+                    font-weight:bold;
+                    letter-spacing: 1px
                 }
 
                 &.swiper-pagination-bullet-active {
@@ -89,6 +125,17 @@
         }
 
         &:hover {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                opacity:1;
+            }
+            .swiper-button-prev {
+                left:0
+            }
+            .swiper-button-next {
+                right:0;
+            }
 
             .swiper-pagination-bullets {
 
@@ -103,7 +150,7 @@
                         opacity: 1;
                     }
 
-                    &:hover, &.swiper-pagination-bullet-active {
+                    &.swiper-pagination-bullet-active {
 
                         .swiper-pagination-bullet-bg {
                             span {
@@ -118,9 +165,15 @@
 
                     &:hover {
 
+                        bottom: 20px;
+
+                        &.swiper-pagination-bullet-active {
+                            bottom: 10px;
+                        }
+
                         .swiper-pagination-bullet-label {
                             display: block;
-                            opacity:1;
+                            opacity: 1;
                         }
                     }
                 }
