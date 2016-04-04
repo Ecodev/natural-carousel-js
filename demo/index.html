@@ -28,7 +28,7 @@
 				url: "https://api.unsplash.com/categories/" + cat + "/photos",
 				data: {
 					client_id: 'c46fa8f775eae058f01a95187d3e47b8f723de91eb976bf74b1f5551606b7a62',
-					per_page: 7
+					per_page: 30
 				},
 				success: function(data) {
 
@@ -46,7 +46,7 @@
 							thumbnail: image.urls.thumb,
 							enlarged: image.urls.regular,
 							title: image.user.name,
-							desc: image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name
+							desc: image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name + " " + image.user.name
 						};
 
 						images.push(formatedImage);
@@ -106,8 +106,8 @@
 
 			<div class="swiper-container natural-carousel" id="natural-carousel-0" data-galleryid="0">
 				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper"></div>
 				<div class="swiper-pagination" id="swiper-pagination-0"></div>
+				<div class="swiper-wrapper"></div>
 				<div class="swiper-button-prev" id="swiper-button-prev-0">
 					<svg viewBox="0 0 12 7.41">
 						<use xlink:href="#natural-carousel-arrow-top"></use>

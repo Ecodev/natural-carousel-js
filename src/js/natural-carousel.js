@@ -20,6 +20,31 @@
                     var slide = $('<div class="swiper-slide"></div>')
                         .css('background-image', 'url(' + data.enlarged + ')');
 
+                    var hasTitle = data.title && data.title != "";
+                    var hasText = data.desc && data.desc != "";
+                    if (hasTitle || hasText) {
+
+                        var side = data.side == 'left' || data.side == 'right' ? data.side : 'left';
+
+                        var textZone = $('<div></div>')
+                            .addClass('natural-carousel-text-container')
+                            .addClass(side + '-side');
+
+                        slide.append(textZone);
+
+
+                        var title = $('<div></div>').addClass('title').text(data.title);
+                        var desc = $('<div></div>').addClass('desc').text(data.desc);
+
+                        if (hasTitle) {
+                            textZone.append(title);
+                        }
+                        if (hasText) {
+                            textZone.append(desc);
+                        }
+
+                    }
+
                     gallery.bodyElement.append(slide);
                 }
 

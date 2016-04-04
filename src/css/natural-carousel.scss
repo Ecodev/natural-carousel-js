@@ -7,7 +7,6 @@ $sliderHeight: 500;
 $paginationMargin: 55;
 $nextPrevWidth: 70;
 
-
 .swiper-cube-shadow {
     display: none !important;
 }
@@ -44,6 +43,7 @@ $nextPrevWidth: 70;
             top: 0;
             height: #{$sliderHeight - $paginationMargin}px;
             transition: all ease 400ms;
+            z-index: 50;
 
             svg {
                 position: absolute;
@@ -70,22 +70,57 @@ $nextPrevWidth: 70;
             }
         }
 
-        .swiper-pagination-bullets {
-            bottom: 0;
-            height:#{$paginationMargin}px;
+        .natural-carousel-text-container {
+            position: absolute;
+            bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+
+            overflow: hidden;
+            max-width: 50%;
+
+            color: #444444;
+            font-size: 16px;
+            line-height: 1.8em;
             transition: all ease 400ms;
 
+            &.left-side {
+                left: 20px;
+                text-align: left;
+            }
+
+            &.right-side {
+                right: 20px;
+                text-align: right;
+            }
+
+            .title {
+                font-size: 38px;
+                margin-bottom: 20px;
+            }
+
+            .desc {
+
+            }
+        }
+
+        .swiper-pagination-bullets {
+            bottom: 0;
+            height: #{$paginationMargin}px;
+            transition: all ease 400ms;
+            z-index: 51;
+
             .swiper-pagination-bullet {
-                vertical-align:top;
+                vertical-align: top;
                 position: relative;
                 top: 10px;
-                margin-bottom:5px;
+                margin-bottom: 5px;
                 width: 15px;
                 height: 15px;
                 transition: all ease 400ms;
 
                 &.swiper-pagination-bullet-active {
-                    top:5px;
+                    top: 5px;
                     width: 25px;
                     height: 25px;
                 }
@@ -99,7 +134,7 @@ $nextPrevWidth: 70;
                     border-radius: 999px;
                     transition: all ease 400ms;
                     background-size: 100px 100px;
-                    background-position:center center;
+                    background-position: center center;
                 }
 
                 .swiper-pagination-bullet-label {
@@ -123,16 +158,22 @@ $nextPrevWidth: 70;
 
             &:hover {
 
-                height:115px;
+                height: 115px;
+
+                & ~ .swiper-wrapper {
+                    .natural-carousel-text-container {
+                        bottom: 70px;
+                    }
+                }
 
                 .swiper-pagination-bullet {
-                    vertical-align:top;
+                    vertical-align: top;
                     width: 70px;
                     height: 70px;
                     opacity: 1;
-                    margin-top:0;
-                    margin-bottom:0;
-                    top:25px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    top: 25px;
 
                     .swiper-pagination-bullet-bg {
                         opacity: 0.5;
@@ -140,7 +181,7 @@ $nextPrevWidth: 70;
 
                     &.swiper-pagination-bullet-active {
 
-                        top:5px;
+                        top: 5px;
                         width: 100px;
                         height: 100px;
 
@@ -176,6 +217,17 @@ $nextPrevWidth: 70;
             }
             .swiper-button-next {
                 right: 0;
+            }
+
+            .natural-carousel-text-container {
+
+                &.left-side {
+                    left: #{$nextPrevWidth+20}px
+                }
+
+                &.right-side {
+                    right: #{$nextPrevWidth+20}px
+                }
             }
         }
     }
