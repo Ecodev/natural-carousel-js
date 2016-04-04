@@ -30,12 +30,9 @@
 
                     paginationBulletRender: function (index, className) {
 
-                        var bgElement = $('<span></span>')
-                            .css('background-image', 'url(' + gallery.slidesData[index].thumbnail +')');
-
                         var bgContainer = $('<span></span>')
                             .addClass('swiper-pagination-bullet-bg')
-                            .append(bgElement);
+                            .css('background-image', 'url(' + gallery.slidesData[index].thumbnail +')');
 
                         var label = $('<span></span>')
                             .text(gallery.slidesData[index].title)
