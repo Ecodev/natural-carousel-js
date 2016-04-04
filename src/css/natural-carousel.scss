@@ -75,16 +75,16 @@ $paginationMargin: 55;
             transition: all ease 400ms;
 
             .swiper-pagination-bullet {
-                vertical-align:middle;
+                vertical-align:top;
                 position: relative;
-                margin-top: 5px;
+                top: 10px;
                 margin-bottom:5px;
                 width: 15px;
                 height: 15px;
-                top:0;
                 transition: all ease 400ms;
 
                 &.swiper-pagination-bullet-active {
+                    top:5px;
                     width: 25px;
                     height: 25px;
                 }
@@ -136,7 +136,6 @@ $paginationMargin: 55;
                 height:115px;
 
                 .swiper-pagination-bullet {
-                    vertical-align:top;
                     width: 70px;
                     height: 70px;
                     opacity: 1;
