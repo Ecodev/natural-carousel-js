@@ -28,7 +28,7 @@
 				url: "https://api.unsplash.com/categories/" + cat + "/photos",
 				data: {
 					client_id: 'c46fa8f775eae058f01a95187d3e47b8f723de91eb976bf74b1f5551606b7a62',
-					per_page: 30
+					per_page: 10
 				},
 				success: function(data) {
 
@@ -63,19 +63,9 @@
 			<h1>Natural carousel</h1>
 
 			<svg version="1.1" style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 7.41" enable-background="new 0 0 12 7.41"><
-
-				<defs>
-					<filter id="f1" x="0" y="0" width="200%" height="200%">
-						<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20"/>
-						<feBlend in="SourceGraphic" in2="offOut" mode="normal"/>
-					</filter>
-				</defs>
-
 				<g id="natural-carousel-arrow-top">
 					<path d="M1.41,7.41L6,2.83l4.59,4.58L12,6L6,0L0,6L1.41,7.41z"></path>
-					<rect width="30" height="30" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)"></rect>
 				</g>
-
 			</svg>
 			<script type="text/javascript">
 				window.naturalCarousels = window.naturalCarousels || [];
@@ -118,9 +108,13 @@
 						<use xlink:href="#natural-carousel-arrow-top"></use>
 					</svg>
 				</div>
-				<!--<div class="swiper-scrollbar" id="swiper-scrollbar-0" ></div>-->
 			</div>
 
+			<p>Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.
+
+				Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui.
+
+				Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
 		</div>
 		<script src="../bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
