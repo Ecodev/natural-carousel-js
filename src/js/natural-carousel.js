@@ -34,9 +34,11 @@
                             .addClass('swiper-pagination-bullet-bg')
                             .css('background-image', 'url(' + gallery.slidesData[index].thumbnail +')');
 
-                        var label = $('<span></span>')
-                            .text(gallery.slidesData[index].title)
-                            .addClass('swiper-pagination-bullet-label');
+                        if (gallery.slidesData[index].title && gallery.slidesData[index].title != "") {
+                            var label = $('<span></span>')
+                                .text(gallery.slidesData[index].title)
+                                .addClass('swiper-pagination-bullet-label');
+                        }
 
                         var bullet = $('<span></span>')
                             .addClass(className)
