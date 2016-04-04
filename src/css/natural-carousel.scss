@@ -4,10 +4,11 @@
 */
 
 .swiper-cube-shadow {
-    display:none !important;
+    display: none !important;
 }
+
 $sliderHeight: 500;
-$paginationMargin: 50;
+$paginationMargin: 35;
 
 .swiper-container {
     height: #{$sliderHeight}px;
@@ -36,44 +37,43 @@ $paginationMargin: 50;
 
         .swiper-button-prev,
         .swiper-button-next {
-            opacity:0;
-            width:70px;
-            top:0;
-            height: #{$sliderHeight}px;
+            opacity: 0;
+            width: 70px;
+            top: 0;
+            height: #{$sliderHeight - $paginationMargin}px;
             transition: all ease 400ms;
 
             svg {
-                position:absolute;
-                width:40px;
-                top:50%;
-                left:50%;
-                margin-top:-10px;
+                position: absolute;
+                width: 40px;
+                top: 50%;
+                left: 50%;
+                margin-top: -10px;
             }
         }
 
         .swiper-button-prev {
-            left:-70px;
+            left: -70px;
             svg {
-                left:13px;
+                left: 13px;
                 transform: rotate(-90deg);
             }
         }
 
         .swiper-button-next {
-            right:-70px;
+            right: -70px;
             svg {
-                left:20px;
+                left: 20px;
                 transform: rotate(90deg);
             }
         }
 
         .swiper-pagination-bullets {
             bottom: 0;
-            //min-height : #{$paginationMargin}px;
 
             .swiper-pagination-bullet {
                 position: relative;
-                bottom: 20px;
+                bottom: 5px;
                 width: 15px;
                 height: 15px;
                 transition: all ease 400ms;
@@ -90,12 +90,14 @@ $paginationMargin: 50;
                     span {
                         display: block;
                         position: relative;
-                        top: -15px;
-                        left: -15px;
+                        left: 50%;
+                        top: 50%;
                         width: 100px;
                         height: 100px;
+                        margin-left: -50px;
+                        margin-top: -50px;
                         background-size: cover;
-                        transition: all ease 400ms;
+                        opacity: 0.7;
                     }
                 }
 
@@ -110,41 +112,41 @@ $paginationMargin: 50;
                     padding: 10px 20px;
                     text-align: center;
                     font-size: 16px;
-                    border-radius:999px;
+                    border-radius: 999px;
                     transition: opacity ease 400ms;
-                    font-weight:bold;
+                    font-weight: bold;
                     letter-spacing: 1px
                 }
 
                 &.swiper-pagination-bullet-active {
-                    bottom: 15px;
+                    bottom: 0;
                     width: 25px;
                     height: 25px;
                 }
             }
         }
 
+        // On carousel hover
         &:hover {
 
             .swiper-button-prev,
             .swiper-button-next {
-                opacity:1;
+                opacity: 1;
             }
             .swiper-button-prev {
-                left:0
+                left: 0
             }
             .swiper-button-next {
-                right:0;
+                right: 0;
             }
 
             .swiper-pagination-bullets {
 
                 .swiper-pagination-bullet {
-                    bottom: 10px;
+                    bottom: 13px;
                     width: 70px;
                     height: 70px;
                     opacity: 1;
-                    background-color: transparent;
 
                     .swiper-pagination-bullet-bg {
                         opacity: 1;
@@ -152,23 +154,23 @@ $paginationMargin: 50;
 
                     &.swiper-pagination-bullet-active {
 
-                        .swiper-pagination-bullet-bg {
-                            span {
-                                top: 0;
-                                left: 0;
-                            }
-                        }
-                        bottom: 0;
+                        bottom: 3px;
                         width: 100px;
                         height: 100px;
+
+                        .swiper-pagination-bullet-bg {
+                            span {
+                                opacity: 1;
+                            }
+                        }
                     }
 
                     &:hover {
 
-                        bottom: 20px;
-
-                        &.swiper-pagination-bullet-active {
-                            bottom: 10px;
+                        .swiper-pagination-bullet-bg {
+                            span {
+                                opacity: 1;
+                            }
                         }
 
                         .swiper-pagination-bullet-label {

@@ -18,7 +18,7 @@
 		<script>
 			var images = [];
 			var thumbnailMaximumHeight = 300;
-			var cats = [2,3,4,6,7,8];
+			var cats = [2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 6, 7, 8];
 			var cat = Math.floor(Math.random() * cats.length);
 			cat = cats[cat];
 
@@ -63,9 +63,19 @@
 			<h1>Natural carousel</h1>
 
 			<svg version="1.1" style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 7.41" enable-background="new 0 0 12 7.41"><
+
+				<defs>
+					<filter id="f1" x="0" y="0" width="200%" height="200%">
+						<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20"/>
+						<feBlend in="SourceGraphic" in2="offOut" mode="normal"/>
+					</filter>
+				</defs>
+
 				<g id="natural-carousel-arrow-top">
-					<path d="M1.41,7.41L6,2.83l4.59,4.58L12,6L6,0L0,6L1.41,7.41z"/>
+					<path d="M1.41,7.41L6,2.83l4.59,4.58L12,6L6,0L0,6L1.41,7.41z"></path>
+					<rect width="30" height="30" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)"></rect>
 				</g>
+
 			</svg>
 			<script type="text/javascript">
 				window.naturalCarousels = window.naturalCarousels || [];
