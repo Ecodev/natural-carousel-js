@@ -12,7 +12,7 @@ $nextPrevWidth: 70;
 .swiper-slide-prev,
 .swiper-slide-next {
     filter:blur(5px);
-    transition:all ease 1000ms;
+    transition:filter ease 1000ms;
 }
 
 .swiper-cube-shadow {
