@@ -3,13 +3,14 @@
 * ===================================================
 */
 
+$sliderHeight: 500;
+$paginationMargin: 55;
+$nextPrevWidth: 70;
+
 
 .swiper-cube-shadow {
     display: none !important;
 }
-
-$sliderHeight: 500;
-$paginationMargin: 55;
 
 .swiper-container {
     height: #{$sliderHeight}px;
@@ -39,7 +40,7 @@ $paginationMargin: 55;
         .swiper-button-prev,
         .swiper-button-next {
             opacity: 0;
-            width: 70px;
+            width: #{$nextPrevWidth}px;
             top: 0;
             height: #{$sliderHeight - $paginationMargin}px;
             transition: all ease 400ms;
@@ -54,7 +55,7 @@ $paginationMargin: 55;
         }
 
         .swiper-button-prev {
-            left: -70px;
+            left: -#{$nextPrevWidth}px;
             svg {
                 left: 13px;
                 transform: rotate(-90deg);
@@ -62,7 +63,7 @@ $paginationMargin: 55;
         }
 
         .swiper-button-next {
-            right: -70px;
+            right: -#{$nextPrevWidth}px;
             svg {
                 left: 20px;
                 transform: rotate(90deg);
