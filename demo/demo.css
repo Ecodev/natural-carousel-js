@@ -3,6 +3,15 @@ h1 {
     font-family: 'PT Sans', sans-serif;
     text-align:center;
     font-size:48px;
+    color:#444;
+}
+
+.default {
+    font-family: 'PT Sans', sans-serif;
+
+    font-size:17px;
+    line-height:1.9em;
+    color:#666;
 }
 
 .natural-gallery {
