@@ -9,8 +9,8 @@ $sliderHeight: 500;
 $paginationMargin: 55;
 $nextPrevWidth: 70;
 
-.swiper-slide-prev,
-.swiper-slide-next {
+
+@include gt-xs('.swiper-slide-prev, .swiper-slide-next') {
     filter:blur(5px);
 }
 
