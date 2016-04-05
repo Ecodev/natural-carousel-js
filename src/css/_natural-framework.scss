@@ -1,0 +1,96 @@
+$natural-screen-xs: 480px;
+$natural-screen-xs-min: $natural-screen-xs;
+$natural-screen-phone: $natural-screen-xs-min;
+
+$natural-screen-sm: 768px;
+$natural-screen-sm-min: $natural-screen-sm;
+$natural-screen-tablet: $natural-screen-sm-min;
+
+$natural-screen-md: 992px;
+$natural-screen-md-min: $natural-screen-md;
+$natural-screen-desktop: $natural-screen-md-min;
+
+$natural-screen-lg: 1200px;
+$natural-screen-lg-min: $natural-screen-lg;
+$natural-screen-lg-desktop: $natural-screen-lg-min;
+
+$natural-screen-xs-max: ($natural-screen-sm-min - 1);
+$natural-screen-sm-max: ($natural-screen-md-min - 1);
+$natural-screen-md-max: ($natural-screen-lg-min - 1);
+
+/**
+ Usage :
+
+ @include lt-lg('p') {
+     ...
+ }
+*/
+
+
+// XS
+@mixin xs($element-selector) {
+    @media (max-width: $natural-screen-xs-max) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+@mixin gt-xs($element-selector) {
+    @media (min-width: $natural-screen-sm-min) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+// SM
+@mixin sm($element-selector) {
+    @media (min-width: $natural-screen-sm-min) and (max-width: $natural-screen-sm-max) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+@mixin gt-sm($element-selector) {
+    @media (min-width: $natural-screen-md-min) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+// MD
+@mixin md($element-selector) {
+    @media (min-width: $natural-screen-md-min) and (max-width: $natural-screen-md-max) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+@mixin lt-md($element-selector) {
+    @media (max-width: $natural-screen-sm-max) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+// LG
+@mixin lg($element-selector) {
+    @media (min-width: $natural-screen-lg-min) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
+
+@mixin lt-lg($element-selector) {
+    @media (max-width: $natural-screen-md-max) {
+        #{$element-selector} {
+            @content;
+        }
+    }
+}
