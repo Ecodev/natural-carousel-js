@@ -17,12 +17,20 @@
                 for (var j = 0; j < gallery.slidesData.length; j++) {
                     var data = gallery.slidesData[j];
 
-                    var slide = $('<div class="swiper-slide"></div>')
+                    var slide = $('<a class="swiper-slide"></a>')
                         .css('background-image', 'url(' + data.enlarged + ')');
 
+                    if (data.slideLink && data.slideLink != '') {
+                        slide.attr('href', data.slideLink);
+                    }
+
+                    // content to test
                     var hasTitle = data.title && data.title != "";
                     var hasText = data.desc && data.desc != "";
-                    if (hasTitle || hasText) {
+                    var hasButton = data.buttonLabel && data.buttonLabel != "" && data.buttonLink && data.buttonLink != "" ;
+
+                    // test content and add
+                    if (hasTitle || hasText || hasButton) {
 
                         var side = data.side == 'left' || data.side == 'right' ? data.side : 'left';
 
@@ -32,15 +40,24 @@
 
                         slide.append(textZone);
 
-
                         var title = $('<div></div>').addClass('title').text(data.title);
-                        var desc = $('<div></div>').addClass('desc').text(data.desc);
+                        var desc = $('<div></div>').addClass('desc').html(data.desc);
 
                         if (hasTitle) {
                             textZone.append(title);
                         }
+
                         if (hasText) {
                             textZone.append(desc);
+                        }
+
+                        if (hasButton) {
+                             var button = $('<a></a>')
+                                 .addClass('natural-carousel-text-button')
+                                 .attr('href', data.buttonLink)
+                                 .text(data.buttonLabel);
+
+                            textZone.append(button);
                         }
 
                     }

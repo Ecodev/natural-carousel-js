@@ -30,3 +30,14 @@
 .natural-carousel .swiper-pagination-bullets:hover .swiper-pagination-bullet {
     background-color: white;
 }
+
+.natural-carousel-text-container .natural-carousel-text-button {
+    display:inline-block;
+    margin-top:10px;
+    padding:7px 20px;
+    background:#0089e0;
+    color:white;
+    box-shadow:0 1px 1px rgba(0,0,0,0.3);
+    border-radius:3px;
+    text-decoration:none;
+}
