@@ -10,7 +10,7 @@
 
                 var gallery = naturalCarousels[i];
 
-                gallery.selector = '#natural-carousel-' + i;
+                gallery.selector = '#natural-carousel-' + gallery.id;
                 gallery.rootElement = $(gallery.selector);
                 gallery.bodyElement = gallery.rootElement.find('.swiper-wrapper');
 
