@@ -2,13 +2,12 @@
 * General
 * ===================================================
 */
-
 @import 'natural-framework';
 
-$nextPrevWidth: 70;
+$nextPrevWidth: 70px;
 
 @include gt-xs('.natural-carousel-blur .swiper-slide-prev, .natural-carousel-blur .swiper-slide-next') {
-    filter:blur(5px);
+    filter: blur(5px);
 }
 
 .swiper-cube-shadow {
@@ -39,8 +38,8 @@ $nextPrevWidth: 70;
 
         .swiper-button-prev,
         .swiper-button-next {
-            opacity: 0;
-            width: #{$nextPrevWidth}px;
+            //opacity: 0;
+            width: $nextPrevWidth;
             top: 0;
             transition: all ease 400ms;
             z-index: 50;
@@ -55,7 +54,7 @@ $nextPrevWidth: 70;
         }
 
         .swiper-button-prev {
-            left: -#{$nextPrevWidth}px;
+            left: -$nextPrevWidth;
             svg {
                 left: 13px;
                 transform: rotate(-90deg);
@@ -63,7 +62,7 @@ $nextPrevWidth: 70;
         }
 
         .swiper-button-next {
-            right: -#{$nextPrevWidth}px;
+            right: -$nextPrevWidth;
             svg {
                 left: 20px;
                 transform: rotate(90deg);
@@ -75,29 +74,40 @@ $nextPrevWidth: 70;
             bottom: 20px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.8);
-
             overflow: hidden;
-            max-width: 50%;
-
-            color: #444444;
             font-size: 16px;
             line-height: 1.8em;
             transition: all ease 400ms;
 
-            &.left-side {
-                left: 20px;
-                text-align: left;
+            width: 50%;
+
+            @include xs() {
+                width: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-left: $nextPrevWidth + 20;
+                padding-right: $nextPrevWidth + 20;
             }
 
-            &.right-side {
-                right: 20px;
-                text-align: right;
+            @include gt-xs() {
+
+                &.left-side {
+                    left: 20px;
+                    text-align: left;
+                }
+
+                &.right-side {
+                    right: 20px;
+                    text-align: right;
+                }
             }
 
             .title {
                 font-size: 38px;
                 margin-bottom: 0.3em;
-                line-height:1.3em;
+                line-height: 1.3em;
             }
 
             .desc {
@@ -110,7 +120,7 @@ $nextPrevWidth: 70;
             width: 31.4%;
             margin-right: auto;
             margin-left: auto;
-            padding:5px 0 15px 0;
+            padding: 5px 0 15px 0;
             z-index: 51;
             font-size: 0;
             transition: width ease 400ms, margin-top ease 400ms;
@@ -174,8 +184,11 @@ $nextPrevWidth: 70;
                 width: 100%;
 
                 & ~ .swiper-wrapper {
-                    .natural-carousel-text-container {
-                        bottom: 70px;
+
+                    @include gt-xs() {
+                        .natural-carousel-text-container {
+                            bottom: 70px;
+                        }
                     }
                 }
 
@@ -234,12 +247,20 @@ $nextPrevWidth: 70;
 
             .natural-carousel-text-container {
 
-                &.left-side {
-                    left: #{$nextPrevWidth+20}px
+                @include xs() {
+                    padding: 20px;
+                    left:$nextPrevWidth +1;
+                    right:$nextPrevWidth +1;
                 }
 
-                &.right-side {
-                    right: #{$nextPrevWidth+20}px
+                @include gt-xs() {
+                    &.left-side {
+                        left: $nextPrevWidth + 20;
+                    }
+
+                    &.right-side {
+                        right: $nextPrevWidth + 20;
+                    }
                 }
             }
         }

@@ -26,70 +26,120 @@ $natural-screen-md-max: ($natural-screen-lg-min - 1);
  }
 */
 
-
 // XS
-@mixin xs($element-selector) {
-    @media (max-width: $natural-screen-xs-max) {
-        #{$element-selector} {
+@mixin xs($selector: null) {
+
+    @if ($selector) {
+        @media (max-width: $natural-screen-xs-max) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (max-width: $natural-screen-xs-max) {
             @content;
         }
     }
+
 }
 
-@mixin gt-xs($element-selector) {
-    @media (min-width: $natural-screen-sm-min) {
-        #{$element-selector} {
+@mixin gt-xs($selector: null) {
+    @if ($selector) {
+        @media (min-width: $natural-screen-sm-min) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (min-width: $natural-screen-sm-min) {
             @content;
         }
     }
 }
 
 // SM
-@mixin sm($element-selector) {
-    @media (min-width: $natural-screen-sm-min) and (max-width: $natural-screen-sm-max) {
-        #{$element-selector} {
+@mixin sm($selector: null) {
+    @if ($selector) {
+        @media (min-width: $natural-screen-sm-min) and (max-width: $natural-screen-sm-max) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (min-width: $natural-screen-sm-min) and (max-width: $natural-screen-sm-max) {
             @content;
         }
     }
 }
 
-@mixin gt-sm($element-selector) {
-    @media (min-width: $natural-screen-md-min) {
-        #{$element-selector} {
+@mixin gt-sm($selector: null) {
+    @if ($selector) {
+        @media (min-width: $natural-screen-md-min) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (min-width: $natural-screen-md-min) {
             @content;
         }
     }
 }
 
 // MD
-@mixin md($element-selector) {
-    @media (min-width: $natural-screen-md-min) and (max-width: $natural-screen-md-max) {
-        #{$element-selector} {
+@mixin md($selector: null) {
+
+    @if ($selector) {
+        @media (min-width: $natural-screen-md-min) and (max-width: $natural-screen-md-max) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (min-width: $natural-screen-md-min) and (max-width: $natural-screen-md-max) {
             @content;
         }
     }
 }
 
-@mixin lt-md($element-selector) {
-    @media (max-width: $natural-screen-sm-max) {
-        #{$element-selector} {
+@mixin lt-md($selector: null) {
+    @if ($selector) {
+        @media (max-width: $natural-screen-sm-max) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (max-width: $natural-screen-sm-max) {
             @content;
         }
     }
 }
 
 // LG
-@mixin lg($element-selector) {
-    @media (min-width: $natural-screen-lg-min) {
-        #{$element-selector} {
+@mixin lg($selector: null) {
+    @if ($selector) {
+        @media (min-width: $natural-screen-lg-min) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (min-width: $natural-screen-lg-min) {
             @content;
         }
     }
 }
 
-@mixin lt-lg($element-selector) {
-    @media (max-width: $natural-screen-md-max) {
-        #{$element-selector} {
+@mixin lt-lg($selector: null) {
+    @if ($selector) {
+        @media (max-width: $natural-screen-md-max) {
+            #{$selector} {
+                @content;
+            }
+        }
+    } @else {
+        @media (max-width: $natural-screen-md-max) {
             @content;
         }
     }

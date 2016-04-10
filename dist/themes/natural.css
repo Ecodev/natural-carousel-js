@@ -31,6 +31,10 @@
     background-color: white;
 }
 
+.natural-carousel-text-container {
+    color:#444444;
+}
+
 .natural-carousel-text-container .natural-carousel-text-button {
     display:inline-block;
     margin-top:10px;
