@@ -238,10 +238,10 @@ $nextPrevWidth: 70px;
             .swiper-button-next {
                 opacity: 1;
             }
-            .swiper-button-prev {
+            .swiper-button-prev:not(.swiper-button-disabled) {
                 left: 0
             }
-            .swiper-button-next {
+            .swiper-button-next:not(.swiper-button-disabled) {
                 right: 0;
             }
 
