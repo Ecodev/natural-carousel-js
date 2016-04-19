@@ -38,6 +38,7 @@
 .natural-carousel-text-container a {
     display:inline-block;
     margin-top:10px;
+    margin-right:10px;
     padding:7px 20px;
     background:#0089e0;
     color:white;
