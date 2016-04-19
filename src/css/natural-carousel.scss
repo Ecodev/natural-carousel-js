@@ -21,6 +21,7 @@ $nextPrevWidth: 70px;
 
 .natural-carousel {
 
+
     *,
     *::after,
     *::before {
@@ -183,9 +184,8 @@ $nextPrevWidth: 70px;
 
                 width: 100%;
 
-                & ~ .swiper-wrapper {
-
-                    @include gt-xs() {
+                @include gt-xs() {
+                    & ~ .swiper-wrapper .swiper-slide-active {
                         .natural-carousel-text-container {
                             bottom: 70px;
                         }
@@ -245,21 +245,23 @@ $nextPrevWidth: 70px;
                 right: 0;
             }
 
-            .natural-carousel-text-container {
+            .swiper-slide-active {
+                .natural-carousel-text-container {
 
-                @include xs() {
-                    padding: 20px;
-                    left:$nextPrevWidth +1;
-                    right:$nextPrevWidth +1;
-                }
-
-                @include gt-xs() {
-                    &.left-side {
-                        left: $nextPrevWidth + 20;
+                    @include xs() {
+                        padding: 20px;
+                        left: $nextPrevWidth +1;
+                        right: $nextPrevWidth +1;
                     }
 
-                    &.right-side {
-                        right: $nextPrevWidth + 20;
+                    @include gt-xs() {
+                        &.left-side {
+                            left: $nextPrevWidth + 20;
+                        }
+
+                        &.right-side {
+                            right: $nextPrevWidth + 20;
+                        }
                     }
                 }
             }
