@@ -20,7 +20,8 @@ $nextPrevWidth: 70px;
 }
 
 .natural-carousel {
-
+    
+    clip-path: content-box;
 
     *,
     *::after,
