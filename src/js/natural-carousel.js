@@ -161,9 +161,9 @@
 
                     textZone.append(button);
                 }
-
-                return slide;
             }
+
+            return slide;
         }
 
         function renderBullets(gallery, index, className) {
