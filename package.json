@@ -2,8 +2,11 @@
   "name": "natural-carousel",
   "description": "A swiper carousel",
   "main": "dist/natural-carousel.min.js",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "debug": "^2.6.8",
+    "node-sass": "^4.5.3",
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
     "gulp-concat": "^2.6.0",
