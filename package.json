@@ -1,32 +1,8 @@
 {
   "name": "natural-carousel",
   "description": "A swiper carousel",
-  "main": "dist/natural-carousel.min.js",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "debug": "^2.6.8",
-    "node-sass": "^4.5.3",
-    "autoprefixer": "^6.3.3",
-    "browser-sync": "^2.11.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-postcss": "^6.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-uglify": "^1.5.2",
-    "gulp-watch": "^4.3.5"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "live": "gulp live"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ecodev/natural-carousel.git"
-  },
+  "homepage": "https://github.com/Ecodev/natural-carousel#readme",
+  "repository": "github:Ecodev/Ecodev/natural-carousel",
   "keywords": [
     "gallery"
   ],
@@ -35,5 +11,25 @@
   "bugs": {
     "url": "https://github.com/Ecodev/natural-carousel/issues"
   },
-  "homepage": "https://github.com/Ecodev/natural-carousel#readme"
+  "main": "dist/natural-carousel.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "live": "gulp live"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.11.1",
+    "debug": "^4.1.1",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "node-sass": "^4.5.3"
+  }
 }
