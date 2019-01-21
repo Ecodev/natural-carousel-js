@@ -50,7 +50,7 @@
                 }
 
                 if (options.showBullets) {
-                    options.paginationBulletRender = function(index, className) {
+                    options.paginationBulletRender = function(swiper, index, className) {
                         return renderBullets(gallery, index, className);
                     };
                 }

@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "jquery": "^2.2.0",
-    "Swiper": "swiper#^3.3.1"
+    "Swiper": "swiper#^3.4.2"
   },
   "devDependencies": {
     "bootstrap": "^3.3.6",
